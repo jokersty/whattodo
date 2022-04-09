@@ -1,14 +1,4 @@
-const {
-    override,
-    addPostcssPlugins,
-} = require("customize-cra");
-
-module.exports = override(
-    addPostcssPlugins([
-        require("postcss-pxtorem")({
-            rootValue: 40,
-            propList: ["*"],
-            selectorBlackList: [".ignore"],
-        }),
-    ])
-);
+module.exports = (config) => {
+    require("react-app-rewire-postcss")(config, true);
+    return config;
+};
