@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.css";
 import App from "./view/app";
 import { createRoot } from "react-dom/client";
 import setRem from "./core/rem";
