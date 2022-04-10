@@ -10,11 +10,11 @@ interface DoList {
 
 export default function Turntable() {
     let defaultdoList: DoList[] = [
-        { id: 0, text: "吃饭" },
-        { id: 1, text: "睡觉" },
-        { id: 2, text: "洗衣" },
-        { id: 3, text: "做饭" },
-        { id: 4, text: "运动" },
+        { id: 0, text: "黄焖鸡" },
+        { id: 1, text: "螺蛳粉" },
+        { id: 2, text: "拉面" },
+        { id: 3, text: "汉堡" },
+        { id: 4, text: "炒饭" },
         { id: 5, text: "再来一次" },
     ];
     let styles = [
