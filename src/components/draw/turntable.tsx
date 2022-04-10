@@ -15,7 +15,9 @@ export default function Turntable() {
         { id: 2, text: "拉面" },
         { id: 3, text: "汉堡" },
         { id: 4, text: "炒饭" },
-        { id: 5, text: "再来一次" },
+        { id: 5, text: "吃大餐" },
+        { id: 6, text: "煎饼" },
+        { id: 7, text: "再来一次" },
     ];
     let styles = [
         `#CE9FFC`,
