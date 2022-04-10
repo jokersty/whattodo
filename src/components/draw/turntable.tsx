@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./draw.module.scss";
+import store from "../../store";
 
 interface DoList {
     id: number;
@@ -56,6 +57,12 @@ export default function Turntable() {
     const [doList] = useState<DoList[]>(newDoList);
     let [deg, setDeg] = useState(360 / doList.length / 2);
     let [drawStyle, setDrawStyle] = useState("");
+    useEffect(() => {
+        console.log("订阅进图", store.getState());
+        store.subscribe(() => {
+            console.log("订阅触发了", store.getState());
+        });
+    });
     const getDrawResult = () => {
         setDrawStyle(drawStyles[Math.floor(Math.random() * drawStyles.length)]);
     };
