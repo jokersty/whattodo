@@ -1,6 +1,6 @@
 import { useState } from "react";
 import style from "./home.module.scss";
-import Turntable from "./draw/turntable";
+import { Turntable } from "../../components";
 
 export default function Home() {
     const [title, setTitle] = useState<string>("待会吃什么");

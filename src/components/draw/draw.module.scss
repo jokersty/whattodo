@@ -19,32 +19,45 @@
         position: relative;
         overflow: hidden;
         transform: rotate(0deg);
+
         .table {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
+            width: 240px;
+            height: 240px;
+            transform-origin: right bottom 0;
+
+            .text {
+                width: 150px;
+                height: 170px;
+                transform-origin: center center 0;
+                transform: skewY(-60deg) rotate(-15deg) translate(5px, 70px);
+                -webkit-transform: skewY(-0deg) rotate(-45deg)
+                    translate(5px, 70px);
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                text-align: center;
+            }
         }
         .table:nth-child(1) {
             background: yellow;
-            transform: rotate(0deg);
-            transform-origin: right center;
+            transform: rotate(0deg) skewY(0deg);
         }
         .table:nth-child(2) {
             background: green;
-            transform: rotate(90deg);
-            transform-origin: right center;
+            transform: rotate(90deg) skewY(0deg);
         }
         .table:nth-child(3) {
             background: blue;
-            transform: rotate(180deg);
-            transform-origin: right center;
+            transform: rotate(180deg) skewY(0deg);
         }
         .table:nth-child(4) {
             background: pink;
-            transform: rotate(270deg);
-            transform-origin: right center;
+            transform: rotate(270deg) skewY(0deg);
+        }
+        .table:nth-child(5) {
+            background: pink;
+            transform: rotate(270deg) skewY(0deg);
         }
     }
 
@@ -55,7 +68,7 @@
         transform: translate(-50%, -50%);
         width: 170px;
         height: 210px;
-        background: url("../../../assets/img/img-arrow.png") no-repeat center
+        background: url("../../assets/img/img-arrow.png") no-repeat center
             center;
         background-size: 100% 100%;
         padding-top: 96px;
@@ -75,7 +88,7 @@ $prize: 8; //奖品数量
 .wr5,
 .wr6,
 .wr7 {
-    animation-duration: $time;
+    animation-duration: 3s;
     animation-timing-function: ease;
     animation-fill-mode: both;
     animation-iteration-count: 1;
@@ -100,6 +113,9 @@ $prize: 8; //奖品数量
 }
 .wr6 {
     animation-name: play6;
+}
+.wr7 {
+    animation-name: play7;
 }
 .wr7 {
     animation-name: play7;
