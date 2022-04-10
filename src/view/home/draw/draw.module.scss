@@ -1,0 +1,146 @@
+.turntable {
+    width: 510px;
+    height: 510px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    .turntable_content {
+        width: 480px;
+        height: 480px;
+        background: #ccc;
+        border-radius: 50%;
+        border: 2px solid #000;
+        position: relative;
+        overflow: hidden;
+        transform: rotate(0deg);
+        .table {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+        }
+        .table:nth-child(1) {
+            background: yellow;
+            transform: rotate(0deg);
+            transform-origin: right center;
+        }
+        .table:nth-child(2) {
+            background: green;
+            transform: rotate(90deg);
+            transform-origin: right center;
+        }
+        .table:nth-child(3) {
+            background: blue;
+            transform: rotate(180deg);
+            transform-origin: right center;
+        }
+        .table:nth-child(4) {
+            background: pink;
+            transform: rotate(270deg);
+            transform-origin: right center;
+        }
+    }
+
+    .turntable_content_center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 170px;
+        height: 210px;
+        background: url("../../../assets/img/img-arrow.png") no-repeat center
+            center;
+        background-size: 100% 100%;
+        padding-top: 96px;
+        font-size: 30px;
+        color: #fff;
+    }
+}
+
+$time: 3s; //转动多少秒后停下的时间
+$prize: 8; //奖品数量
+
+.wr0,
+.wr1,
+.wr2,
+.wr3,
+.wr4,
+.wr5,
+.wr6,
+.wr7 {
+    animation-duration: $time;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+.wr0 {
+    animation-name: play0;
+}
+.wr1 {
+    animation-name: play1;
+}
+.wr2 {
+    animation-name: play2;
+}
+.wr3 {
+    animation-name: play3;
+}
+.wr4 {
+    animation-name: play4;
+}
+.wr5 {
+    animation-name: play5;
+}
+.wr6 {
+    animation-name: play6;
+}
+.wr7 {
+    animation-name: play7;
+}
+@keyframes play0 {
+    to {
+        transform: rotate(calc(5 * 360deg + 20deg + 360deg / $prize * 0));
+    }
+}
+@keyframes play1 {
+    to {
+        transform: rotate(calc(5 * 360deg + 20deg + 360deg / $prize * 1));
+    }
+}
+@keyframes play2 {
+    to {
+        transform: rotate(calc(5 * 360deg + 20deg + 360deg / $prize * 2));
+    }
+}
+@keyframes play3 {
+    to {
+        transform: rotate(calc(5 * 360deg + 20deg + (360deg / $prize) * 3));
+    }
+}
+@keyframes play4 {
+    to {
+        transform: rotate(calc(5 * 360deg + 20deg + 360deg / $prize * 4));
+    }
+}
+@keyframes play5 {
+    to {
+        transform: rotate(calc(5 * 360deg + 20deg + 360deg / $prize * 5));
+    }
+}
+@keyframes play6 {
+    to {
+        transform: rotate(calc(5 * 360deg + 20deg + ((360deg / $prize) * 6)));
+    }
+}
+@keyframes play7 {
+    to {
+        transform: rotate(calc(5 * 360deg + 20deg + (360deg / $prize) * 7));
+    }
+}
