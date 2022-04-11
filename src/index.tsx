@@ -3,7 +3,7 @@ import App from "./view/app";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import store from "./store";
-import setRem from "./core/rem";
+import setRem from "./utils/rem";
 
 setRem();
 const container = document.getElementById("root");

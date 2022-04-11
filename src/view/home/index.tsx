@@ -8,6 +8,8 @@ export default function Home() {
     store.dispatch({
         type: "getTodoList",
     });
+    console.log(store.getState());
+
     const [title, setTitle] = useState<string>("待会吃什么");
     return (
         <div className={style.home}>

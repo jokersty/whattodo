@@ -1,7 +1,8 @@
 import "./App.scss";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "../home";
-import React, { useState } from "react";
+import Custom from "../custom/custom";
+import { useState } from "react";
 import TabBar from "../../components/tabBar";
 
 function App() {
@@ -9,13 +10,15 @@ function App() {
         { name: "立刻决定", id: "0", checked: true, page: "home" },
         { name: "自定义", id: "1", checked: false, page: "custom" },
     ]);
-    const [activePage, setActivePage] = useState("Movie");
     const changeTab = (id: string) => {
-        const newTabList = tabList.map((list) => {
+        const checkClick = tabList.filter((item) => item.id === id);
+        if (checkClick[0].checked) {
+            return;
+        }
+        let newTabList = tabList.map((list) => {
             let newList = { ...list };
             if (newList.id === id && !newList.checked) {
                 newList.checked = true;
-                setActivePage(newList.page);
             } else {
                 newList.checked = false;
             }
@@ -24,20 +27,19 @@ function App() {
         setTabList(newTabList);
     };
     return (
-        <React.Fragment>
-            <HashRouter>
-                <Routes>
-                    <Route path="/home" element={<Home />} />
-                    <Route path="*" element={<Navigate to="/home" />} />
-                </Routes>
-            </HashRouter>
+        <HashRouter>
+            <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/custom" element={<Custom />} />
+                <Route path="*" element={<Navigate to="/home" />} />
+            </Routes>
             <TabBar
                 tabList={tabList}
                 changeTab={(id: string) => {
                     changeTab(id);
                 }}
             ></TabBar>
-        </React.Fragment>
+        </HashRouter>
     );
 }
 

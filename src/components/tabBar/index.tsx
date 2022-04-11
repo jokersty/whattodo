@@ -1,4 +1,5 @@
 import style from "./index.module.scss";
+import { Link } from "react-router-dom";
 
 export default function TabBar(props: any) {
     const tabList = props.tabList;
@@ -6,7 +7,7 @@ export default function TabBar(props: any) {
         <div className={style.tab}>
             {tabList.map((item: any) => {
                 return (
-                    <div
+                    <Link
                         className={`${style.tab_name} ${
                             item.checked && style.active
                         }`}
@@ -14,9 +15,11 @@ export default function TabBar(props: any) {
                         onClick={() => {
                             props.changeTab(item.id);
                         }}
+                        to={`/${item.page}`}
                     >
                         {item.name}
-                    </div>
+                        {item.checked}
+                    </Link>
                 );
             })}
         </div>
